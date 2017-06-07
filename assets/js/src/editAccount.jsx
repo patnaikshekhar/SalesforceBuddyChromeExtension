@@ -142,7 +142,7 @@ class EditAccount extends React.Component {
                     <div className="slds-form-element">
                         <label className="slds-form-element__label" htmlFor="name">Name</label>
                         <div className="slds-form-element__control">
-                            <input className="slds-input" type="text" placeholder="Name" onChange={this.bindState.bind(this, 'name')} value={this.state.name} autoComplete="off"/>
+                            <input className="slds-input" type="text" placeholder="Name / If blank will be generated from username" onChange={this.bindState.bind(this, 'name')} value={this.state.name} autoComplete="off"/>
                         </div>
                     </div>
                     <div className="slds-form-element">

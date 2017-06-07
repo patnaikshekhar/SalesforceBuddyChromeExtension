@@ -25113,7 +25113,7 @@
 	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'slds-form-element__control' },
-	                            _react2.default.createElement('input', { className: 'slds-input', type: 'text', placeholder: 'Name', onChange: this.bindState.bind(this, 'name'), value: this.state.name, autoComplete: 'off' })
+	                            _react2.default.createElement('input', { className: 'slds-input', type: 'text', placeholder: 'Name / If blank will be generated from username', onChange: this.bindState.bind(this, 'name'), value: this.state.name, autoComplete: 'off' })
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -25429,6 +25429,7 @@
 	                if (secret) {
 	                    acc.account.username = CryptoJS.TripleDES.encrypt(acc.account.username, secret).toString();
 	                    acc.account.password = CryptoJS.TripleDES.encrypt(acc.account.password, secret).toString();
+	                    acc.account.token = CryptoJS.TripleDES.encrypt(acc.account.token, secret).toString();
 	                }
 
 	                return acc.account;
@@ -25467,6 +25468,7 @@
 	                        if (_this2.state.secret) {
 	                            a.username = CryptoJS.TripleDES.decrypt(a.username, _this2.state.secret).toString(CryptoJS.enc.Utf8);
 	                            a.password = CryptoJS.TripleDES.decrypt(a.password, _this2.state.secret).toString(CryptoJS.enc.Utf8);
+	                            a.token = CryptoJS.TripleDES.decrypt(a.token, _this2.state.secret).toString(CryptoJS.enc.Utf8);
 	                        }
 
 	                        var importState = null;
