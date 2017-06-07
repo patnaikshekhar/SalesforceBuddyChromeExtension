@@ -140,6 +140,12 @@ class EditAccount extends React.Component {
                 </div>
 		  		<div className="slds-col slds-size--1-of-1 margin-on-top slds-col--padded slds-form--stacked">
                     <div className="slds-form-element">
+                        <label className="slds-form-element__label" htmlFor="name">Name</label>
+                        <div className="slds-form-element__control">
+                            <input className="slds-input" type="text" placeholder="Name / If blank will be generated from username" onChange={this.bindState.bind(this, 'name')} value={this.state.name} autoComplete="off"/>
+                        </div>
+                    </div>
+                    <div className="slds-form-element">
                         <label className="slds-form-element__label" htmlFor="orgType">Environment</label>
                         <div className="slds-form-element__control">
                             <div className="slds-select_container">
@@ -172,9 +178,9 @@ class EditAccount extends React.Component {
                         </div>
                     </div>
                     <div className="slds-form-element">
-                        <label className="slds-form-element__label" htmlFor="name">Name</label>
+                        <label className="slds-form-element__label" htmlFor="token">Security token</label>
                         <div className="slds-form-element__control">
-                            <input className="slds-input" type="text" placeholder="Name" onChange={this.bindState.bind(this, 'name')} value={this.state.name} autoComplete="off"/>
+                            <input className="slds-input" type="text" placeholder="Security token" onChange={this.bindState.bind(this, 'token')} value={this.state.token} autoComplete="off"/>
                         </div>
                     </div>
                     <button className="slds-button slds-button--brand margin-on-top" onClick={this.saveChanges.bind(this)}>Save</button>

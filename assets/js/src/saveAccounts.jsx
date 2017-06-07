@@ -87,7 +87,8 @@ export default class SaveAccounts extends React.Component {
                 .map((acc) => {
                     if (secret) {
                         acc.account.username = CryptoJS.TripleDES.encrypt(acc.account.username, secret).toString();
-                        acc.account.password = CryptoJS.TripleDES.encrypt(acc.account.password, secret).toString();    
+                        acc.account.password = CryptoJS.TripleDES.encrypt(acc.account.password, secret).toString(); 
+                        acc.account.token = CryptoJS.TripleDES.encrypt(acc.account.token, secret).toString();    
                     }
                     
                     return acc.account;
@@ -121,6 +122,7 @@ export default class SaveAccounts extends React.Component {
                     if (this.state.secret) {
                         a.username = CryptoJS.TripleDES.decrypt(a.username, this.state.secret).toString(CryptoJS.enc.Utf8);
                         a.password = CryptoJS.TripleDES.decrypt(a.password, this.state.secret).toString(CryptoJS.enc.Utf8);
+                        a.token = CryptoJS.TripleDES.decrypt(a.token, this.state.secret).toString(CryptoJS.enc.Utf8);
                     }
                     
                     var importState = null;
